@@ -3,5 +3,5 @@ CREATE OR REPLACE VIEW client_balance_2 AS
 			SUM(invoice_total-payment_total) AS balance
 	FROM invoices i
 	JOIN clients c USING(client_id)
-	WHERE (invoice_total-payment_total)>0
+	WHERE (invoice_total-payment_total)>=100
     GROUP BY client_id, name
